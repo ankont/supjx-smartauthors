@@ -1,0 +1,5 @@
+GNU GENERAL PUBLIC LICENSE
+Version 2, June 1991
+
+This work is licensed under the GPL version 2 or any later version.
+For the full license text, see https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt

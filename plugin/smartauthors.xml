@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" method="upgrade">
+    <name>PLG_SYSTEM_SMARTAUTHORS</name>
+    <author>SuperSoft — Kontarinis Andreas</author>
+    <authorEmail>ankont@sch.gr</authorEmail>
+    <authorUrl>https://superor.wordpress.com/</authorUrl>
+    <creationDate>2026-09-27</creationDate>
+    <copyright>© 2026 SuperSoft — Kontarinis Andreas</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <version>1.1.14</version>
+    <description>PLG_SYSTEM_SMARTAUTHORS_DESC</description>
+    <namespace path="src">SuperSoft\Plugin\System\SmartAuthors</namespace>
+    <scriptfile>script.php</scriptfile>
+    <files>
+        <filename plugin="smartauthors">smartauthors.xml</filename>
+        <filename>script.php</filename>
+        <folder plugin="smartauthors">services</folder>
+        <folder>forms</folder>
+        <folder>language</folder>
+        <folder>src</folder>
+        <folder>sql</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/plg_system_smartauthors.ini</language>
+        <language tag="en-GB">language/en-GB/plg_system_smartauthors.sys.ini</language>
+        <language tag="el-GR">language/el-GR/plg_system_smartauthors.ini</language>
+        <language tag="el-GR">language/el-GR/plg_system_smartauthors.sys.ini</language>
+    </languages>
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8mb4.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8mb4.sql</file>
+        </sql>
+    </uninstall>
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+</extension>

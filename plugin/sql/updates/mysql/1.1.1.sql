@@ -1,0 +1,2 @@
+-- SuperSoftJx SmartAuthors schema update to 1.1.1
+-- Bugfix: Fix MVC component naming/option conventions preventing frontend article edit (No schema alterations required)

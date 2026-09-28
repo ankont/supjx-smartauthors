@@ -1,0 +1,2 @@
+-- SuperSoftJx SmartAuthors schema update to 1.1.0
+-- Phase 2: Article Runtime Integration (No schema alterations required)

@@ -1,0 +1,2 @@
+-- SuperSoftJx SmartAuthors update to 1.1.3
+-- Schema marker

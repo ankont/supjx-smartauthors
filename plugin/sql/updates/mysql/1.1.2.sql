@@ -1,0 +1,2 @@
+-- SuperSoftJx SmartAuthors schema update to 1.1.2
+-- Direct frontend Form view & new article create authorization (No schema alterations required)

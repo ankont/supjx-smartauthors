@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="smartauthors">
+        <fieldset name="smartauthors_fieldset" label="PLG_SYSTEM_SMARTAUTHORS_FIELDSET_LABEL">
+            <field
+                name="policy"
+                type="radio"
+                label="PLG_SYSTEM_SMARTAUTHORS_FIELD_POLICY_LABEL"
+                description="PLG_SYSTEM_SMARTAUTHORS_FIELD_POLICY_DESC"
+                default="inherit"
+                layout="joomla.form.field.radio.switcher"
+            >
+                <option value="inherit">PLG_SYSTEM_SMARTAUTHORS_OPTION_POLICY_INHERIT</option>
+                <option value="custom">PLG_SYSTEM_SMARTAUTHORS_OPTION_POLICY_CUSTOM</option>
+            </field>
+
+            <field
+                name="policy_type"
+                type="radio"
+                label="PLG_SYSTEM_SMARTAUTHORS_FIELD_POLICY_TYPE_LABEL"
+                description="PLG_SYSTEM_SMARTAUTHORS_FIELD_POLICY_TYPE_DESC"
+                default="personal"
+                layout="joomla.form.field.radio.switcher"
+                showon="policy:custom"
+            >
+                <option value="personal">PLG_SYSTEM_SMARTAUTHORS_OPTION_POLICY_TYPE_PERSONAL</option>
+                <option value="collaborative">PLG_SYSTEM_SMARTAUTHORS_OPTION_POLICY_TYPE_COLLABORATIVE</option>
+            </field>
+
+            <field
+                name="owner_id"
+                type="user"
+                label="PLG_SYSTEM_SMARTAUTHORS_FIELD_OWNER_LABEL"
+                description="PLG_SYSTEM_SMARTAUTHORS_FIELD_OWNER_DESC"
+                parentclass="smartauthors-owner-field"
+                showon="policy:custom[AND]policy_type:personal"
+            />
+
+            <field
+                name="contributors"
+                type="subform"
+                label="PLG_SYSTEM_SMARTAUTHORS_FIELD_CONTRIBUTORS_LABEL"
+                description="PLG_SYSTEM_SMARTAUTHORS_FIELD_CONTRIBUTORS_DESC"
+                layout="joomla.form.field.subform.repeatable-table"
+                multiple="true"
+                parentclass="smartauthors-contributors-field"
+                showon="policy:custom[AND]policy_type:collaborative"
+            >
+                <form>
+                    <field
+                        name="user_id"
+                        type="user"
+                        label="PLG_SYSTEM_SMARTAUTHORS_FIELD_CONTRIBUTOR_USER_LABEL"
+                        required="true"
+                    />
+                </form>
+            </field>
+
+            <field
+                name="edit_mode"
+                type="radio"
+                label="PLG_SYSTEM_SMARTAUTHORS_FIELD_EDIT_MODE_LABEL"
+                description="PLG_SYSTEM_SMARTAUTHORS_FIELD_EDIT_MODE_DESC"
+                default="own"
+                layout="joomla.form.field.radio.switcher"
+                showon="policy:custom"
+            >
+                <option value="own">PLG_SYSTEM_SMARTAUTHORS_OPTION_EDIT_OWN</option>
+                <option value="all">PLG_SYSTEM_SMARTAUTHORS_OPTION_EDIT_ALL</option>
+            </field>
+
+            <field
+                name="state_mode"
+                type="radio"
+                label="PLG_SYSTEM_SMARTAUTHORS_FIELD_STATE_MODE_LABEL"
+                description="PLG_SYSTEM_SMARTAUTHORS_FIELD_STATE_MODE_DESC"
+                default="none"
+                layout="joomla.form.field.radio.switcher"
+                showon="policy:custom"
+            >
+                <option value="none">PLG_SYSTEM_SMARTAUTHORS_OPTION_STATE_DRAFTS</option>
+                <option value="all">PLG_SYSTEM_SMARTAUTHORS_OPTION_STATE_PUBLISH</option>
+            </field>
+
+            <field
+                name="category_management"
+                type="radio"
+                label="PLG_SYSTEM_SMARTAUTHORS_FIELD_CATEGORY_MANAGEMENT_LABEL"
+                description="PLG_SYSTEM_SMARTAUTHORS_FIELD_CATEGORY_MANAGEMENT_DESC"
+                default="none"
+                layout="joomla.form.field.radio.switcher"
+                showon="policy:custom"
+            >
+                <option value="none">PLG_SYSTEM_SMARTAUTHORS_OPTION_CATEGORY_NONE</option>
+                <option value="subtree">PLG_SYSTEM_SMARTAUTHORS_OPTION_CATEGORY_SUBTREE</option>
+            </field>
+        </fieldset>
+    </fields>
+</form>
